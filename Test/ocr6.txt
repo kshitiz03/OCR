@@ -1,0 +1,34 @@
+def ocr space file (filename, overlay False, api 
+OCR. space API request with local file. 
+' Oc265702be88957 ' 
+language 
+Python 3 . 5 
+: param filename : 
+: param overlay: 
+: param api key: 
+: param language : 
+not tested on 2.7 
+Your file path & name . 
+Is OCR. space overlay required in your response . 
+Defaults to False. 
+OCR. space API key. 
+Defaults to 'helloworld' . 
+Language code to be used in OCR. 
+List of available language codes can be 
+Defaults to 'en' . 
+found on https://ocr. space/ OCRAPI 
+: return : 
+payload 
+Result in JSON format. 
+{ ' isOverIayRequired' : overlay, 
+' apikey ' 
+api key, 
+' language ' 
+language , 
+with open (filename, 
+'rb') as f: 
+requests . post ( ' https : / / api . ocr . space/ parse/ image ' 
+r 
+files {filename: f}, 
+data=payload, 
+return r . content . decode ( ) 
